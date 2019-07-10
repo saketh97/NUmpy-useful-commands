@@ -1,23 +1,36 @@
 import numpy as np
-
-#basic commands
-array_1d = np.array([10,22,53,14,75])     #to create a 1D array using numpy
-print(array_1d)
-
-len(array_1d)    #display length of array
-
-array_1d.sum()   #display sum of elements in array
-
-array_1d.max()  #display mamimum value element in array
-
-array_1d.min() #display minimum value element in array
+import matplotlib.pyplot as plt
 
 #random library
 
 np.random.rand(3,2) #create a 3x2 array of random values between 0 and 1
 
-np.random.randn(3,3) #creates a trandom 3x3 array of values
+np.random.randn(3,3) #creates a random 3x3 array of values from standard normal distribution
 
-np.random.randint(5,size=10) #create array of size 10 with values between 0-5(exclusive)
+np.random.randint(1,5,size=(2,2)) #create array of size 10 with values between 1(inclusive) to 5(exclusive)
 
- np.random.random_sample() #returns a random sample between 0.0(exclusive) and 1.0
+np.random.random() #returns a random sample between 0.0(exclusive) and 1.0(inclusive)
+np.random.sample() #returns a random sample between 0.0(exclusive) and 1.0(inclusive)
+
+df = np.array([22,34,56])
+np.random.choice(df,1,p=[0.1,0.6,0.3])  #choose 1 number from df where p is probabilites of there occurences
+
+np.random.choice(4,3,replace = True) #choose 3 number between 0-4(exclusive) where repition is allowed
+np.random.choice(4,3,replace = False) #choose 3 number between 0-4(exclusive) where repition is not allowed
+
+
+n, p = 10, 0.5  # number of trials, probability of each trial
+s = np.random.binomial(n, p, 1000)
+# result of flipping a coin 10 times, tested 1000 times.
+plt.hist(s)
+
+mean, std = 2, 0.1 # mean and standard deviation
+s = np.random.normal(mean, std, 1000)
+plt.hist(s)#binomial distribution is discrete and normal idstribution is continous.
+
+s = np.random.uniform(-1,0,1000)
+plt.hist(s)#uniform distribution of between -1 and 0 form 1000 times
+
+np.random.permutation(10) #randomly arrange array of numbers between 0-9.
+
+np.random.permutation([1, 4, 9, 12, 15]) #random arrange the mentioned numbers in that array.
