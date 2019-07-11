@@ -34,3 +34,37 @@ plt.hist(s)#uniform distribution of between -1 and 0 form 1000 times
 np.random.permutation(10) #randomly arrange array of numbers between 0-9.
 
 np.random.permutation([1, 4, 9, 12, 15]) #random arrange the mentioned numbers in that array.
+
+
+#linear algebra library
+
+np.dot(3,5) #dot product of two values
+
+a = np.array([1,2],[3,4])
+b = np.array([4,5],[6,7])
+np.dot(a,b) #returns dot product of two matrices
+
+np.dot([2j, 3j], [2j, 3j]) #dotproduct of conjugates
+
+
+a = np.array([1,2],[3,4])
+b = np.array([4,5],[6,7])
+c=np.array([[2,3],[3,4]])    #the dot product of two or more arrays in a single function call,
+np.linalg.multi_dot([a,b,c]) #while automatically selecting the fastest evaluation order.
+
+a = [[1, 0], [0, 1]]
+b = [[4, 1], [2, 2]]
+np.matmul(a, b)   #matrix multiplication of two arrays.
+
+b = [[4, 1], [2, 2]]
+np.linalg.matrix_power(b,2) #Raise a square matrix to the (integer) power 2.
+
+A = np.array([[1,-2j],[2j,5]])
+L = np.linalg.cholesky(A) #Cholesky decomposition of a matrix.
+
+np.linalg.eigvals(a) #returns eigen values of matrix 'a'
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+w,v = np.linalg.eig(a)   # computes eigen values and right eigen vectors of square array
