@@ -67,4 +67,48 @@ a = np.array([[1,2,3],[4,5,6],[7,8,9]])
 
 
 a = np.array([[1,2,3],[4,5,6],[7,8,9]])
-w,v = np.linalg.eig(a)   # computes eigen values and right eigen vectors of square array
+w,v = np.linalg.eig(a)   # computes eigen values and right eigen vectors of square array. w is eigen values, v is eigen vector.
+
+b = [[4, 1], [2, 2]]
+np.linalg.matrix_rank(b)  #find the rank of a matrix.
+
+b = [[4, 1], [2, 2]]
+np.linalg.det(b) #find the determinant of an array
+
+b = [[4, 1], [2, 2]]
+np.linalg.inv(b)  #finds the multiplicative inverse of a matrix.
+
+
+#useful commands
+
+#1. numpy where for conditional search
+a = np.array([6,6,7,8,4,5,3,6,7,1,2,2,2])
+index_gt_5 = np.where(a > 5) #index where a > 5
+a.take(index_gt_5) #get values in those indexes
+
+#2.Position of maximum and minumum element in array
+a = np.array([61,43,555,6,7,8,99])
+np.argmax(a)  #index of maximum element
+np.argmin(a) #indexof minimum element
+
+#3.concatination of two arrays
+a = np.zeros([4, 4])
+b = np.ones([4, 4])
+#vertical concatintion
+np.concatenate([a, b], axis=0)
+np.vstack([a,b])
+np.r_[a,b]
+#horizontal concatination
+np.concatenate([a, b], axis=1)
+np.hstack([a,b])
+np.c_[a,b]
+
+#4.sorting a array in different ways
+arr = np.random.randint(1,6, size=[8, 4])
+np.sort(arr,axis =0) #sort each column
+np.sort(arr,axis =1) #sort each row
+
+
+sort_acc_1stcol = arr[:, 0].argsort()
+# Sort 'arr' by first column without disturbing the content in rows
+arr[sort_acc_1stcol]
